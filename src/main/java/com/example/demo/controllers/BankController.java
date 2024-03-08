@@ -61,11 +61,17 @@ public class BankController {
 	@PutMapping("/transfer")
 	public String transfer(int amount, int from, int to, int ifsc)
 	{
-		if (repo.findByAccountNo(from).get(0).getBalance()>amount)
+		Account a1 =  repo.findByAccountNo(from).get(0);
+		Account a2 =  repo.findByAccountNo(to).get(0);
+		if (a1.getBalance()>amount)
 		{
-			
+			a1.setBalance(a1.getBalance()-amount);
+			a2.setBalance(a2.getBalance()+amount);
+			repo.save(a1);
+			repo.save(a2);
+			return "Transfer Success";
 		}
-		return "";
+		return "Transfer Failed";
 	}
 	
 	@GetMapping("/balance")

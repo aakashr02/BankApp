@@ -2,21 +2,21 @@ package com.example.demo.models;
 
 public class Login {
 
-	private int CustomerID;
+	private int customerID;
 	private String password;
 	public Login(int customerID, String password) {
 		super();
-		CustomerID = customerID;
+		this.customerID = customerID;
 		this.password = password;
 	}
 	public Login() {
 		super();
 	}
 	public int getCustomerID() {
-		return CustomerID;
+		return customerID;
 	}
 	public void setCustomerID(int customerID) {
-		CustomerID = customerID;
+		this.customerID = customerID;
 	}
 	public String getPassword() {
 		return password;

@@ -1,18 +1,29 @@
 package com.example.demo.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "Account")
 public class Account {
 	
 	@Id
+	@Column(name = "CUSTOMERID")
 	private int customerID;
+	@Column(name="PHONE")
 	private int phone;
+
+	@Column(name="PASSWORD")
 	private String password;
+	@Column(name = "ACCOUNTNO")
 	private int accountNo;
+	@Column(name="IFSC")
 	private String IFSC;
+	@Column(name="TYPE")
 	private String type;
+	@Column(name="BALANCE")
 	private int balance;
 	
 	
@@ -68,7 +79,7 @@ public class Account {
 	public int getBalance() {
 		return balance;
 	}
-	public void setMobile(int balance) {
+	public void setBalance(int balance) {
 		this.balance = balance;
 	}
 		
